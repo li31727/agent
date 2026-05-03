@@ -63,6 +63,7 @@ class Settings(BaseSettings):
 
     # 思考模式开关 — 可在 .env 里随时切换,代码不用改
     anthropic_thinking: ThinkingMode = Field(default="auto", alias="ANTHROPIC_THINKING")
+    openai_thinking: ThinkingMode = Field(default="auto", alias="OPENAI_THINKING")
 
     # ===== OpenAI 协议 =====
     openai_api_key: str = Field(..., alias="OPENAI_API_KEY")
@@ -84,3 +85,4 @@ if __name__ == "__main__":
     print(f"  🟩 OpenAI Model        : {settings.openai_model}")
     print(f"  🟩 OpenAI Base URL     : {settings.openai_base_url or '(默认官方)'}")
     print(f"  🟩 OpenAI API Key      : {'*' * 10}{settings.openai_api_key[-4:]}")
+    print(f"  🟩 OpenAI Thinking     : {settings.openai_thinking}")
