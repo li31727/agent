@@ -32,6 +32,8 @@ llm_kit — Week 1 Day 6 整合 SDK
 """
 
 from .agent import ReActAgent
+from .async_agent import AsyncReActAgent
+from .async_client import AsyncLLMClient
 from .client import LLMClient, ThinkingMode
 from .exceptions import (
     AgentMaxIterationsError,
@@ -43,13 +45,16 @@ from .exceptions import (
 )
 from .structured import StructuredExtractor
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"  # Day 8 加入异步支持
 
 __all__ = [
-    # 主类
+    # 同步主类
     "LLMClient",
     "ReActAgent",
     "StructuredExtractor",
+    # 异步主类(Day 8 新增)
+    "AsyncLLMClient",
+    "AsyncReActAgent",
     # 类型
     "ThinkingMode",
     # 异常
